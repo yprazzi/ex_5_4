@@ -1,6 +1,8 @@
 let x = 0
+let x1 = 0
 basic.forever(function () {
     x = 0
+    x1 = 4
     for (let index = 0; index < 5; index++) {
         led.plot(x, 0)
         basic.pause(200)
@@ -10,13 +12,14 @@ basic.forever(function () {
         basic.pause(200)
         led.toggle(x + 3, 0)
         basic.pause(200)
-        led.toggle(x + 4, 0)
+        led.plot(x1, 0)
         basic.pause(200)
-    }
-    x = 4
-    for (let index = 0; index < 5; index++) {
-        led.plot(x, 0)
-        led.toggle(x - 1, 0)
-        basic.pause(500)
+        led.unplot(x1, 0)
+        basic.pause(200)
+        led.toggle(x1 - 1, 0)
+        basic.pause(200)
+        led.toggle(x1 - 2, 0)
+        basic.pause(200)
+        led.toggle(x1 - 3, 0)
     }
 })
